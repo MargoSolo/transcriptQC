@@ -2,13 +2,13 @@ gene,input,variant,mane_select,mane_select_ensembl,plus_clinical,status,action,n
 BRCA1,NM_007294.3,c.5266dupC,NM_007294.4,ENST00000357654.9,,OLD_VERSION,update transcript version; re-validate c. position,current version is NM_007294.4
 BRCA2,NM_000059.3,c.5946delT,NM_000059.4,ENST00000380152.8,,OLD_VERSION,update transcript version; re-validate c. position,current version is NM_000059.4
 TP53,NM_000546.6,c.743G>A,NM_000546.6,ENST00000269305.9,,MANE_SELECT,none,
-SCN2A,NM_021007.2,c.4766A>G,NM_001040142.2,ENST00000375437.7,NM_001371246.1,NON_MANE,re-report on the MANE Select (or justify),gene has MANE Plus Clinical transcript(s): NM_001371246.1 — check which isoform carries the variant
+SCN2A,NM_021007.2,c.4766A>G,NM_001040142.2,ENST00000375437.7,NM_001371246.1,NON_MANE,review transcript choice against MANE Select / MANE Plus Clinical; document the rationale if retaining a non-MANE transcript,gene has MANE Plus Clinical transcript(s): NM_001371246.1 — check which isoform carries the variant
 SCN2A,NM_001040142.2,c.4766A>G,NM_001040142.2,ENST00000375437.7,NM_001371246.1,MANE_SELECT,none,gene has MANE Plus Clinical transcript(s): NM_001371246.1 — check which isoform carries the variant
 CFTR,NM_000492.4,c.1521_1523delCTT,NM_000492.4,ENST00000003084.11,,MANE_SELECT,none,
 MEFV,NM_000243.2,c.2080A>G,NM_000243.3,ENST00000219596.6,,OLD_VERSION,update transcript version; re-validate c. position,current version is NM_000243.3
 BRCA1,NM_000059.4,c.100A>G,NM_007294.4,ENST00000357654.9,,GENE_MISMATCH,fix gene or transcript,"NM_000059.4 is the MANE Select transcript of BRCA2, not BRCA1"
 TTN,NM_001267550.2,c.100A>G,NM_001267550.2,ENST00000589042.5,,MANE_SELECT,none,
-TTN,NM_133378.4,c.100A>G,NM_001267550.2,ENST00000589042.5,,NON_MANE,re-report on the MANE Select (or justify),
+TTN,NM_133378.4,c.100A>G,NM_001267550.2,ENST00000589042.5,,NON_MANE,review transcript choice against MANE Select / MANE Plus Clinical; document the rationale if retaining a non-MANE transcript,
 MYH7,ENST00000355349.4,c.100A>G,NM_000257.4,ENST00000355349.4,,MANE_SELECT,none,
 NOTAGENE,NM_000000.1,c.1A>G,,,,UNKNOWN_GENE,check the gene symbol,
 ACHE,NM_001302622.2,c.100A>G,NM_000665.5,ENST00000241069.11,,MANE_SELECT_CHANGED,move to the current MANE Select; re-map the variant,"MANE Select changed in MANE v1.5: now NM_000665.5 (ENST00000241069.11), previously NM_001302622.2; CDS affected: No"

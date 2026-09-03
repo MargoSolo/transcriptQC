@@ -6,7 +6,7 @@
 ![deps](https://img.shields.io/badge/deps-typer%20only-blue)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
 
-**Is this transcript right for clinical reporting?** Variant reports arrive on old or arbitrary RefSeq/Ensembl transcripts: `NM_007294.3`, `NM_021007.2`, `ENST…`. MANE exists to settle exactly this — **MANE Select** is the NCBI/EBI standard transcript per gene, **MANE Plus Clinical** the clinically needed extra isoforms. `manecheck` compares what you were given with the current MANE snapshot and says what to do, one transcript or a whole lab table at a time, **offline**, from a versioned MANE bulk file shipped inside the package.
+**Is this transcript aligned with the current MANE reference set?** Variant reports arrive on old or arbitrary RefSeq/Ensembl transcripts: `NM_007294.3`, `NM_021007.2`, `ENST…`. MANE is the NCBI/EMBL-EBI reference set for exactly this — **MANE Select** is one agreed transcript per gene, **MANE Plus Clinical** adds isoforms needed for known clinically relevant variants. `manecheck` compares what you were given with a versioned MANE snapshot and reports the alignment with a suggested action, one transcript or a whole lab table at a time, **offline**, from the MANE bulk files shipped inside the package. It is a reference-choice QC, not a transcript-selection policy: a non-MANE transcript can be the right choice with a documented rationale.
 
 ```bash
 pip install git+https://github.com/MargoSolo/transcriptQC
@@ -69,13 +69,13 @@ Potential reporting problems: 9
 
 | status | meaning | action |
 |---|---|---|
-| `MANE_SELECT` | exactly the current MANE Select | none |
+| `MANE_SELECT` | matches the current MANE Select | none |
 | `MANE_PLUS_CLINICAL` | a MANE Plus Clinical isoform | state why this isoform is used |
 | `OLD_VERSION` | right transcript, outdated version | update version, re-validate the c. position |
 | `MANE_SELECT_CHANGED` | used to be MANE Select; the selection moved to another accession (from MANE's own change list, with *CDS affected: yes/no*) | move to the current MANE Select, re-map |
-| `NON_MANE` | not a MANE transcript for the gene | re-report on MANE Select, or justify |
+| `NON_MANE` | not a MANE transcript for the gene | review against MANE Select / Plus Clinical; document the rationale if retained |
 | `GENE_MISMATCH` | the accession is MANE for a *different* gene | fix gene or transcript |
-| `GENE_NOT_IN_MANE` | protein-coding gene without a MANE transcript yet | use RefSeq Select / longest CDS and say so |
+| `GENE_NOT_IN_MANE` | protein-coding gene without a MANE transcript yet | follow gene-specific or laboratory transcript-selection policy |
 | `NEWER_VERSION` | newer than the snapshot | refresh the snapshot (`--mane current`) |
 | `UNKNOWN_TRANSCRIPT` / `UNKNOWN_GENE` / `UNPARSEABLE` | cannot resolve | add gene · check symbol · fix accession |
 
@@ -102,11 +102,11 @@ Six offline tests on the bundled snapshot: real MANE values (BRCA1, SCN2A with i
 
 ## Not in scope, on purpose
 
-It checks the transcript, not the variant: no HGVS validation, no coordinate lift between versions (use VariantValidator or Mutalyzer for that; this tells you *when* you need to). No GRCh37: MANE is GRCh38-only, which is itself the message.
+It checks the transcript, not the variant: no HGVS validation, no coordinate lift between versions (use VariantValidator or Mutalyzer for that; this tells you *when* you need to). MANE transcript definitions are anchored to GRCh38; this tool does not validate assembly-specific genomic coordinates. MANE mappings to GRCh37 and other assemblies are provided separately by NCBI and are not used here.
 
 ## Roadmap
 
-GRCh37 warning when a report is on the old assembly · Ensembl ↔ RefSeq consistency check on paired accessions · MANE version diff (`manecheck diff 1.4 1.5`) · VCF INFO field check · pairs with [`VariantStory`](https://github.com/MargoSolo/VariantStory) and [`vus-recheck`](https://github.com/MargoSolo/vus-recheck).
+assembly check when genomic coordinates are supplied · Ensembl ↔ RefSeq consistency check on paired accessions · MANE version diff (`manecheck diff 1.4 1.5`) · VCF INFO field check · pairs with [`VariantStory`](https://github.com/MargoSolo/VariantStory) and [`vus-recheck`](https://github.com/MargoSolo/vus-recheck).
 
 ## Name
 

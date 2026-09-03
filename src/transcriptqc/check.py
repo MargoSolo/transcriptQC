@@ -6,15 +6,15 @@ from pathlib import Path
 from .mane import MANE, load_mane, split_acc
 
 STATUS_HELP = {
-    "MANE_SELECT": "exactly the current MANE Select transcript — fine for clinical reporting",
+    "MANE_SELECT": "matches the current MANE Select transcript — aligned with the MANE reference set",
     "MANE_PLUS_CLINICAL": "a MANE Plus Clinical transcript — acceptable when this isoform is the clinically relevant one; say why",
     "OLD_VERSION": "right transcript, outdated version — c. coordinates may differ; update the version and re-check the HGVS",
     "OLD_VERSION_PLUS_CLINICAL": "a MANE Plus Clinical transcript at an outdated version — update the version",
     "NEWER_VERSION": "a version newer than the MANE snapshot — update the MANE snapshot before deciding",
     "MANE_SELECT_CHANGED": "this used to be MANE Select; the current MANE Select is a different accession — check coordinates carefully",
-    "NON_MANE": "not a MANE transcript for this gene — use the MANE Select unless there is a documented reason",
+    "NON_MANE": "not a MANE transcript for this gene — review the transcript choice against MANE Select / MANE Plus Clinical; a non-MANE transcript can be legitimate with a documented rationale",
     "GENE_MISMATCH": "the transcript belongs to a different gene than stated — likely a copy-paste error",
-    "GENE_NOT_IN_MANE": "protein-coding gene without a MANE transcript yet — no MANE standard to compare against",
+    "GENE_NOT_IN_MANE": "protein-coding gene without a MANE transcript yet — no MANE reference to compare against",
     "UNKNOWN_TRANSCRIPT": "accession not in the MANE snapshot and no gene given — cannot tell which gene it belongs to (add a gene column)",
     "UNKNOWN_GENE": "gene symbol not found in MANE — check the symbol (HGNC) or spelling",
     "UNPARSEABLE": "could not parse the transcript accession",
@@ -55,7 +55,7 @@ def _result(inp, gene, var, status, e=None, m: MANE | None = None, **kw) -> Resu
 
 ACTION = {"MANE_SELECT": "none", "MANE_PLUS_CLINICAL": "state why the Plus Clinical isoform is used", "OLD_VERSION": "update transcript version; re-validate c. position",
           "OLD_VERSION_PLUS_CLINICAL": "update transcript version", "NEWER_VERSION": "refresh the MANE snapshot", "MANE_SELECT_CHANGED": "move to the current MANE Select; re-map the variant",
-          "NON_MANE": "re-report on the MANE Select (or justify)", "GENE_MISMATCH": "fix gene or transcript", "GENE_NOT_IN_MANE": "use the RefSeq Select / longest CDS and say so",
+          "NON_MANE": "review transcript choice against MANE Select / MANE Plus Clinical; document the rationale if retaining a non-MANE transcript", "GENE_MISMATCH": "fix gene or transcript", "GENE_NOT_IN_MANE": "no MANE transcript available; follow gene-specific or laboratory transcript-selection policy",
           "UNKNOWN_TRANSCRIPT": "add the gene symbol", "UNKNOWN_GENE": "check the gene symbol", "UNPARSEABLE": "fix the accession"}
 
 

@@ -9,7 +9,7 @@ from .report import to_text, to_csv, to_json, to_html, summary
 app = typer.Typer(add_completion=False)
 
 
-@app.command(help="Is this transcript right for clinical reporting? TARGET: a CSV/TSV file, a transcript (NM_…/ENST…), an HGVS string (NM_…:c.…) or a gene symbol.")
+@app.command(help="Is this transcript aligned with the current MANE reference set? TARGET: a CSV/TSV file, a transcript (NM_…/ENST…), an HGVS string (NM_…:c.…) or a gene symbol.")
 def main(target: str = typer.Argument(..., help="file · transcript · HGVS · gene"),
          mane: str = typer.Option("bundled", help="'bundled' (v1.5 snapshot), a release like '1.5', or 'current' (downloads once)"),
          csv_out: Path | None = typer.Option(None, "--csv"), json_out: Path | None = typer.Option(None, "--json"), html_out: Path | None = typer.Option(None, "--html"),

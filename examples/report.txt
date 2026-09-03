@@ -23,7 +23,7 @@ SCN2A  c.4766A>G
   Current MANE Select:   NM_001040142.2
   MANE Plus Clinical:    NM_001371246.1
   Status:                NON_MANE ⚠
-  Action:                re-report on the MANE Select (or justify)
+  Action:                review transcript choice against MANE Select / MANE Plus Clinical; document the rationale if retaining a non-MANE transcript
   Note:                  gene has MANE Plus Clinical transcript(s): NM_001371246.1 — check which isoform carries the variant
 
 SCN2A  c.4766A>G
@@ -64,7 +64,7 @@ TTN  c.100A>G
   Input transcript:      NM_133378.4
   Current MANE Select:   NM_001267550.2
   Status:                NON_MANE ⚠
-  Action:                re-report on the MANE Select (or justify)
+  Action:                review transcript choice against MANE Select / MANE Plus Clinical; document the rationale if retaining a non-MANE transcript
 
 MYH7  c.100A>G
   Input transcript:      ENST00000355349.4
