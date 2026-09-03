@@ -1,5 +1,6 @@
 # transcriptQC · `manecheck`
 
+[![PyPI](https://img.shields.io/pypi/v/transcriptqc.svg)](https://pypi.org/project/transcriptqc/)
 [![ci](https://github.com/MargoSolo/transcriptQC/actions/workflows/ci.yml/badge.svg)](https://github.com/MargoSolo/transcriptQC/actions/workflows/ci.yml)
 ![MANE](https://img.shields.io/badge/MANE-v1.5%20snapshot%20bundled-8e44ad)
 ![offline](https://img.shields.io/badge/network-none%20needed-2ecc71)
@@ -9,7 +10,7 @@
 **Is this transcript aligned with the current MANE reference set?** Variant reports arrive on old or arbitrary RefSeq/Ensembl transcripts: `NM_007294.3`, `NM_021007.2`, `ENST…`. MANE is the NCBI/EMBL-EBI reference set for exactly this — **MANE Select** is one agreed transcript per gene, **MANE Plus Clinical** adds isoforms needed for known clinically relevant variants. `manecheck` compares what you were given with a versioned MANE snapshot and reports the alignment with a suggested action, one transcript or a whole lab table at a time, **offline**, from the MANE bulk files shipped inside the package. It is a reference-choice QC, not a transcript-selection policy: a non-MANE transcript can be the right choice with a documented rationale.
 
 ```bash
-pip install git+https://github.com/MargoSolo/transcriptQC
+pip install transcriptqc
 manecheck variants.csv --html report.html          # columns: gene, transcript, variant (any subset; or one HGVS column)
 manecheck "NM_007294.3:c.5266dupC"
 manecheck NM_021007.2 --gene SCN2A
