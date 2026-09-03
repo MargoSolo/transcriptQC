@@ -1,6 +1,7 @@
 # transcriptQC · `manecheck`
 
 [![PyPI](https://img.shields.io/pypi/v/transcriptqc.svg)](https://pypi.org/project/transcriptqc/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22285580.svg)](https://doi.org/10.5281/zenodo.22285580)
 [![ci](https://github.com/MargoSolo/transcriptQC/actions/workflows/ci.yml/badge.svg)](https://github.com/MargoSolo/transcriptQC/actions/workflows/ci.yml)
 ![MANE](https://img.shields.io/badge/MANE-v1.5%20snapshot%20bundled-8e44ad)
 ![offline](https://img.shields.io/badge/network-none%20needed-2ecc71)
@@ -112,6 +113,10 @@ assembly check when genomic coordinates are supplied · Ensembl ↔ RefSeq consi
 ## Name
 
 Repository `transcriptQC`, command `manecheck` (also `transcriptqc`): MANE is the engine today; version freshness, RefSeq/Ensembl matching and assembly checks fit under the wider name later without renaming. An unrelated `eastgenomics/ManeCheck` repository exists on GitHub.
+
+## Cite
+
+Solosenko M. *transcriptQC: MANE Select / MANE Plus Clinical transcript check for clinical reporting.* 2026. doi:10.5281/zenodo.22285580 (concept DOI, all versions; v0.1.1 = 10.5281/zenodo.22285581). Machine-readable in `CITATION.cff`.
 
 ## License
 

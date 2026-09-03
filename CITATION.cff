@@ -3,6 +3,11 @@ message: "If you use this software, please cite it as below."
 type: software
 title: "transcriptQC: MANE Select / Plus Clinical transcript check for clinical reporting"
 version: 0.1.1
+doi: 10.5281/zenodo.22285581
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22285580
+    description: Concept DOI (all versions)
 date-released: "2026-09-03"
 license: MIT
 repository-code: "https://github.com/MargoSolo/transcriptQC"
