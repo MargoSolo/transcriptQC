@@ -8,6 +8,8 @@
 ![deps](https://img.shields.io/badge/deps-typer%20only-blue)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
 
+![manecheck summary of the example table](docs/hero.png)
+
 **Is this transcript aligned with the current MANE reference set?** Variant reports arrive on old or arbitrary RefSeq/Ensembl transcripts: `NM_007294.3`, `NM_021007.2`, `ENST…`. MANE is the NCBI/EMBL-EBI reference set for exactly this — **MANE Select** is one agreed transcript per gene, **MANE Plus Clinical** adds isoforms needed for known clinically relevant variants. `manecheck` compares what you were given with a versioned MANE snapshot and reports the alignment with a suggested action, one transcript or a whole lab table at a time, **offline**, from the MANE bulk files shipped inside the package. It is a reference-choice QC, not a transcript-selection policy: a non-MANE transcript can be the right choice with a documented rationale.
 
 ```bash
