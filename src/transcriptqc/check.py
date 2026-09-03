@@ -33,7 +33,7 @@ class Result:
     mane_select_ensembl: str | None = None
     plus_clinical: list[str] = field(default_factory=list)
     gene_of_transcript: str | None = None
-    action: str = ""
+    suggested_check: str = ""
     note: str = ""
     problem: bool = False
 
@@ -47,13 +47,13 @@ def _result(inp, gene, var, status, e=None, m: MANE | None = None, **kw) -> Resu
     if sel: r.mane_select, r.mane_select_ensembl = sel.refseq, sel.ensembl
     g = gene or (e.symbol if e else None)
     if g and m: r.plus_clinical = [x.refseq for x in m.plus_clinical(g)]
-    r.action = ACTION.get(status, "")
+    r.suggested_check = SUGGESTED.get(status, "")
     if r.plus_clinical and status in ("MANE_SELECT", "OLD_VERSION", "NON_MANE"): r.note = (r.note + " " if r.note else "") + f"gene has MANE Plus Clinical transcript(s): {', '.join(r.plus_clinical)} — check which isoform carries the variant"
     r.problem = status in PROBLEM
     return r
 
 
-ACTION = {"MANE_SELECT": "none", "MANE_PLUS_CLINICAL": "state why the Plus Clinical isoform is used", "OLD_VERSION": "update transcript version; re-validate c. position",
+SUGGESTED = {"MANE_SELECT": "none", "MANE_PLUS_CLINICAL": "state why the Plus Clinical isoform is used", "OLD_VERSION": "update transcript version; re-validate c. position",
           "OLD_VERSION_PLUS_CLINICAL": "update transcript version", "NEWER_VERSION": "refresh the MANE snapshot", "MANE_SELECT_CHANGED": "move to the current MANE Select; re-map the variant",
           "NON_MANE": "review transcript choice against MANE Select / MANE Plus Clinical; document the rationale if retaining a non-MANE transcript", "GENE_MISMATCH": "fix gene or transcript", "GENE_NOT_IN_MANE": "no MANE transcript available; follow gene-specific or laboratory transcript-selection policy",
           "UNKNOWN_TRANSCRIPT": "add the gene symbol", "UNKNOWN_GENE": "check the gene symbol", "UNPARSEABLE": "fix the accession"}
@@ -90,7 +90,7 @@ def check_transcript(transcript: str, gene: str | None = None, mane: MANE | None
 def check_hgvs(hgvs: str, mane: MANE | None = None) -> Result:
     """'NM_007294.3:c.5266dupC' or 'NM_007294.3(BRCA1):c.5266dupC'."""
     mm = HGVS.match(hgvs)
-    if not mm: return Result(hgvs, None, None, "UNPARSEABLE", action=ACTION["UNPARSEABLE"], problem=True)
+    if not mm: return Result(hgvs, None, None, "UNPARSEABLE", suggested_check=SUGGESTED["UNPARSEABLE"], problem=True)
     return check_transcript(mm.group("acc"), mm.group("gene"), mane, mm.group("var"))
 
 
@@ -113,7 +113,7 @@ def check_file(path, mane: MANE | None = None) -> list[Result]:
     for r in rows:
         t = (r.get(tcol) or "").strip() if tcol else ""; g = (r.get(gcol) or "").strip() if gcol else None; v = (r.get(vcol) or "").strip() if vcol else None
         if not t and v and ":" in v: out.append(check_hgvs(v, m)); continue
-        if not t and v and ":" not in v and not gcol: out.append(Result(v, g, v, "UNPARSEABLE", action=ACTION["UNPARSEABLE"], problem=True)); continue
+        if not t and v and ":" not in v and not gcol: out.append(Result(v, g, v, "UNPARSEABLE", suggested_check=SUGGESTED["UNPARSEABLE"], problem=True)); continue
         if ":" in t and not v: out.append(check_hgvs(t, m)); continue
         out.append(check_transcript(t, g or None, m, v or None))
     return out

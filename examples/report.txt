@@ -2,28 +2,28 @@ BRCA1  c.5266dupC
   Input transcript:      NM_007294.3
   Current MANE Select:   NM_007294.4
   Status:                OLD_VERSION ⚠
-  Action:                update transcript version; re-validate c. position
+  Suggested check:       update transcript version; re-validate c. position
   Note:                  current version is NM_007294.4
 
 BRCA2  c.5946delT
   Input transcript:      NM_000059.3
   Current MANE Select:   NM_000059.4
   Status:                OLD_VERSION ⚠
-  Action:                update transcript version; re-validate c. position
+  Suggested check:       update transcript version; re-validate c. position
   Note:                  current version is NM_000059.4
 
 TP53  c.743G>A
   Input transcript:      NM_000546.6
   Current MANE Select:   NM_000546.6
   Status:                MANE_SELECT ✓
-  Action:                none
+  Suggested check:       none
 
 SCN2A  c.4766A>G
   Input transcript:      NM_021007.2
   Current MANE Select:   NM_001040142.2
   MANE Plus Clinical:    NM_001371246.1
   Status:                NON_MANE ⚠
-  Action:                review transcript choice against MANE Select / MANE Plus Clinical; document the rationale if retaining a non-MANE transcript
+  Suggested check:       review transcript choice against MANE Select / MANE Plus Clinical; document the rationale if retaining a non-MANE transcript
   Note:                  gene has MANE Plus Clinical transcript(s): NM_001371246.1 — check which isoform carries the variant
 
 SCN2A  c.4766A>G
@@ -31,65 +31,65 @@ SCN2A  c.4766A>G
   Current MANE Select:   NM_001040142.2
   MANE Plus Clinical:    NM_001371246.1
   Status:                MANE_SELECT ✓
-  Action:                none
+  Suggested check:       none
   Note:                  gene has MANE Plus Clinical transcript(s): NM_001371246.1 — check which isoform carries the variant
 
 CFTR  c.1521_1523delCTT
   Input transcript:      NM_000492.4
   Current MANE Select:   NM_000492.4
   Status:                MANE_SELECT ✓
-  Action:                none
+  Suggested check:       none
 
 MEFV  c.2080A>G
   Input transcript:      NM_000243.2
   Current MANE Select:   NM_000243.3
   Status:                OLD_VERSION ⚠
-  Action:                update transcript version; re-validate c. position
+  Suggested check:       update transcript version; re-validate c. position
   Note:                  current version is NM_000243.3
 
 BRCA1  c.100A>G
   Input transcript:      NM_000059.4
   Current MANE Select:   NM_007294.4
   Status:                GENE_MISMATCH ✗
-  Action:                fix gene or transcript
+  Suggested check:       fix gene or transcript
   Note:                  NM_000059.4 is the MANE Select transcript of BRCA2, not BRCA1
 
 TTN  c.100A>G
   Input transcript:      NM_001267550.2
   Current MANE Select:   NM_001267550.2
   Status:                MANE_SELECT ✓
-  Action:                none
+  Suggested check:       none
 
 TTN  c.100A>G
   Input transcript:      NM_133378.4
   Current MANE Select:   NM_001267550.2
   Status:                NON_MANE ⚠
-  Action:                review transcript choice against MANE Select / MANE Plus Clinical; document the rationale if retaining a non-MANE transcript
+  Suggested check:       review transcript choice against MANE Select / MANE Plus Clinical; document the rationale if retaining a non-MANE transcript
 
 MYH7  c.100A>G
   Input transcript:      ENST00000355349.4
   Current MANE Select:   NM_000257.4
   Status:                MANE_SELECT ✓
-  Action:                none
+  Suggested check:       none
 
 NOTAGENE  c.1A>G
   Input transcript:      NM_000000.1
   Current MANE Select:   —
   Status:                UNKNOWN_GENE ?
-  Action:                check the gene symbol
+  Suggested check:       check the gene symbol
 
 ACHE  c.100A>G
   Input transcript:      NM_001302622.2
   Current MANE Select:   NM_000665.5
   Status:                MANE_SELECT_CHANGED ⚠
-  Action:                move to the current MANE Select; re-map the variant
+  Suggested check:       move to the current MANE Select; re-map the variant
   Note:                  MANE Select changed in MANE v1.5: now NM_000665.5 (ENST00000241069.11), previously NM_001302622.2; CDS affected: No
 
 FOO  c.1A>G
   Input transcript:      
   Current MANE Select:   —
   Status:                UNPARSEABLE ✗
-  Action:                fix the accession
+  Suggested check:       fix the accession
 
 TRANSCRIPT QC
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

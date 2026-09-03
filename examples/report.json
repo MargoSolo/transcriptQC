@@ -26,7 +26,7 @@
       "mane_select_ensembl": "ENST00000357654.9",
       "plus_clinical": [],
       "gene_of_transcript": "BRCA1",
-      "action": "update transcript version; re-validate c. position",
+      "suggested_check": "update transcript version; re-validate c. position",
       "note": "current version is NM_007294.4",
       "problem": true
     },
@@ -39,7 +39,7 @@
       "mane_select_ensembl": "ENST00000380152.8",
       "plus_clinical": [],
       "gene_of_transcript": "BRCA2",
-      "action": "update transcript version; re-validate c. position",
+      "suggested_check": "update transcript version; re-validate c. position",
       "note": "current version is NM_000059.4",
       "problem": true
     },
@@ -52,7 +52,7 @@
       "mane_select_ensembl": "ENST00000269305.9",
       "plus_clinical": [],
       "gene_of_transcript": "TP53",
-      "action": "none",
+      "suggested_check": "none",
       "note": "",
       "problem": false
     },
@@ -67,7 +67,7 @@
         "NM_001371246.1"
       ],
       "gene_of_transcript": null,
-      "action": "review transcript choice against MANE Select / MANE Plus Clinical; document the rationale if retaining a non-MANE transcript",
+      "suggested_check": "review transcript choice against MANE Select / MANE Plus Clinical; document the rationale if retaining a non-MANE transcript",
       "note": "gene has MANE Plus Clinical transcript(s): NM_001371246.1 — check which isoform carries the variant",
       "problem": true
     },
@@ -82,7 +82,7 @@
         "NM_001371246.1"
       ],
       "gene_of_transcript": "SCN2A",
-      "action": "none",
+      "suggested_check": "none",
       "note": "gene has MANE Plus Clinical transcript(s): NM_001371246.1 — check which isoform carries the variant",
       "problem": false
     },
@@ -95,7 +95,7 @@
       "mane_select_ensembl": "ENST00000003084.11",
       "plus_clinical": [],
       "gene_of_transcript": "CFTR",
-      "action": "none",
+      "suggested_check": "none",
       "note": "",
       "problem": false
     },
@@ -108,7 +108,7 @@
       "mane_select_ensembl": "ENST00000219596.6",
       "plus_clinical": [],
       "gene_of_transcript": "MEFV",
-      "action": "update transcript version; re-validate c. position",
+      "suggested_check": "update transcript version; re-validate c. position",
       "note": "current version is NM_000243.3",
       "problem": true
     },
@@ -121,7 +121,7 @@
       "mane_select_ensembl": "ENST00000357654.9",
       "plus_clinical": [],
       "gene_of_transcript": "BRCA2",
-      "action": "fix gene or transcript",
+      "suggested_check": "fix gene or transcript",
       "note": "NM_000059.4 is the MANE Select transcript of BRCA2, not BRCA1",
       "problem": true
     },
@@ -134,7 +134,7 @@
       "mane_select_ensembl": "ENST00000589042.5",
       "plus_clinical": [],
       "gene_of_transcript": "TTN",
-      "action": "none",
+      "suggested_check": "none",
       "note": "",
       "problem": false
     },
@@ -147,7 +147,7 @@
       "mane_select_ensembl": "ENST00000589042.5",
       "plus_clinical": [],
       "gene_of_transcript": null,
-      "action": "review transcript choice against MANE Select / MANE Plus Clinical; document the rationale if retaining a non-MANE transcript",
+      "suggested_check": "review transcript choice against MANE Select / MANE Plus Clinical; document the rationale if retaining a non-MANE transcript",
       "note": "",
       "problem": true
     },
@@ -160,7 +160,7 @@
       "mane_select_ensembl": "ENST00000355349.4",
       "plus_clinical": [],
       "gene_of_transcript": "MYH7",
-      "action": "none",
+      "suggested_check": "none",
       "note": "",
       "problem": false
     },
@@ -173,7 +173,7 @@
       "mane_select_ensembl": null,
       "plus_clinical": [],
       "gene_of_transcript": null,
-      "action": "check the gene symbol",
+      "suggested_check": "check the gene symbol",
       "note": "",
       "problem": true
     },
@@ -186,7 +186,7 @@
       "mane_select_ensembl": "ENST00000241069.11",
       "plus_clinical": [],
       "gene_of_transcript": "ACHE",
-      "action": "move to the current MANE Select; re-map the variant",
+      "suggested_check": "move to the current MANE Select; re-map the variant",
       "note": "MANE Select changed in MANE v1.5: now NM_000665.5 (ENST00000241069.11), previously NM_001302622.2; CDS affected: No",
       "problem": true
     },
@@ -199,7 +199,7 @@
       "mane_select_ensembl": null,
       "plus_clinical": [],
       "gene_of_transcript": null,
-      "action": "fix the accession",
+      "suggested_check": "fix the accession",
       "note": "",
       "problem": true
     }

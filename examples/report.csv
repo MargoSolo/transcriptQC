@@ -1,4 +1,4 @@
-gene,input,variant,mane_select,mane_select_ensembl,plus_clinical,status,action,note
+gene,input,variant,mane_select,mane_select_ensembl,plus_clinical,status,suggested_check,note
 BRCA1,NM_007294.3,c.5266dupC,NM_007294.4,ENST00000357654.9,,OLD_VERSION,update transcript version; re-validate c. position,current version is NM_007294.4
 BRCA2,NM_000059.3,c.5946delT,NM_000059.4,ENST00000380152.8,,OLD_VERSION,update transcript version; re-validate c. position,current version is NM_000059.4
 TP53,NM_000546.6,c.743G>A,NM_000546.6,ENST00000269305.9,,MANE_SELECT,none,

@@ -20,7 +20,7 @@ def to_text(results: list[Result], release: str) -> str:
         head = f"{r.gene or r.gene_of_transcript or '?'}" + (f"  {r.variant}" if r.variant else "")
         L += [head, f"  Input transcript:      {r.input}", f"  Current MANE Select:   {r.mane_select or '—'}"]
         if r.plus_clinical: L.append(f"  MANE Plus Clinical:    {', '.join(r.plus_clinical)}")
-        L += [f"  Status:                {r.status} {ICON.get(r.status, '')}", f"  Action:                {r.action}"]
+        L += [f"  Status:                {r.status} {ICON.get(r.status, '')}", f"  Suggested check:       {r.suggested_check}"]
         if r.note: L.append(f"  Note:                  {r.note}")
         L.append("")
     s = summary(results)
@@ -32,8 +32,8 @@ def to_text(results: list[Result], release: str) -> str:
 
 
 def to_csv(results: list[Result]) -> str:
-    b = io.StringIO(); w = csv.writer(b); w.writerow(["gene", "input", "variant", "mane_select", "mane_select_ensembl", "plus_clinical", "status", "action", "note"])
-    for r in results: w.writerow([r.gene or r.gene_of_transcript or "", r.input, r.variant or "", r.mane_select or "", r.mane_select_ensembl or "", ";".join(r.plus_clinical), r.status, r.action, r.note])
+    b = io.StringIO(); w = csv.writer(b); w.writerow(["gene", "input", "variant", "mane_select", "mane_select_ensembl", "plus_clinical", "status", "suggested_check", "note"])
+    for r in results: w.writerow([r.gene or r.gene_of_transcript or "", r.input, r.variant or "", r.mane_select or "", r.mane_select_ensembl or "", ";".join(r.plus_clinical), r.status, r.suggested_check, r.note])
     return b.getvalue()
 
 
@@ -48,10 +48,10 @@ def to_html(results: list[Result], release: str, title="Transcript QC") -> str:
     for k, v in s["counts"].items(): H.append(f"<div class=card style='border-left:5px solid {col[ICON[k]]}'><b>{v}</b>{ICON[k]} {k.replace('_', ' ').lower()}</div>")
     H.append(f"<div class=card style='border-left:5px solid #c0392b'><b>{s['problems']}</b>potential reporting problems</div></div>")
     if s["genes_with_plus_clinical"]: H.append(f"<p>ℹ Genes with a MANE Plus Clinical transcript in this set: <b>{', '.join(html.escape(g) for g in s['genes_with_plus_clinical'])}</b> — check which isoform carries each variant.</p>")
-    H += ["<table><tr><th></th><th>gene</th><th>input</th><th>variant</th><th>MANE Select</th><th>Plus Clinical</th><th>status</th><th>action</th><th>note</th></tr>"]
+    H += ["<table><tr><th></th><th>gene</th><th>input</th><th>variant</th><th>MANE Select</th><th>Plus Clinical</th><th>status</th><th>suggested check</th><th>note</th></tr>"]
     for r in sorted(results, key=lambda r: ORDER.index(r.status)):
         H.append(f"<tr class='{'p' if r.problem else ''}'><td style='color:{col[ICON[r.status]]};font-weight:700'>{ICON[r.status]}</td><td>{html.escape(r.gene or r.gene_of_transcript or '')}</td><td><code>{html.escape(r.input)}</code></td><td><code>{html.escape(r.variant or '')}</code></td>"
-                 f"<td><code>{html.escape(r.mane_select or '—')}</code></td><td><code>{html.escape(', '.join(r.plus_clinical))}</code></td><td>{r.status}</td><td>{html.escape(r.action)}</td><td>{html.escape(r.note)}</td></tr>")
+                 f"<td><code>{html.escape(r.mane_select or '—')}</code></td><td><code>{html.escape(', '.join(r.plus_clinical))}</code></td><td>{r.status}</td><td>{html.escape(r.suggested_check)}</td><td>{html.escape(r.note)}</td></tr>")
     H.append("</table><details><summary>What the statuses mean</summary><ul>" + "".join(f"<li><b>{k}</b> — {html.escape(v)}</li>" for k, v in STATUS_HELP.items()) + "</ul></details>")
     H.append(f"<p class=foot>transcriptqc · MANE {html.escape(release)} from NCBI/EBI bulk files (offline, reproducible). A transcript check, not a variant classification.</p>")
     return "\n".join(H)

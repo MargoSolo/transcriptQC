@@ -71,7 +71,7 @@ Potential reporting problems: 9
 
 ## Statuses
 
-| status | meaning | action |
+| status | meaning | suggested check |
 |---|---|---|
 | `MANE_SELECT` | matches the current MANE Select | none |
 | `MANE_PLUS_CLINICAL` | a MANE Plus Clinical isoform | state why this isoform is used |
