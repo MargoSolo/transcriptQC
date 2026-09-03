@@ -1,0 +1,221 @@
+{
+  "mane_release": "v1.5 (bundled)",
+  "summary": {
+    "n": 14,
+    "counts": {
+      "GENE_MISMATCH": 1,
+      "UNPARSEABLE": 1,
+      "MANE_SELECT_CHANGED": 1,
+      "OLD_VERSION": 3,
+      "NON_MANE": 2,
+      "UNKNOWN_GENE": 1,
+      "MANE_SELECT": 5
+    },
+    "problems": 9,
+    "genes_with_plus_clinical": [
+      "SCN2A"
+    ]
+  },
+  "results": [
+    {
+      "input": "NM_007294.3",
+      "gene": "BRCA1",
+      "variant": "c.5266dupC",
+      "status": "OLD_VERSION",
+      "mane_select": "NM_007294.4",
+      "mane_select_ensembl": "ENST00000357654.9",
+      "plus_clinical": [],
+      "gene_of_transcript": "BRCA1",
+      "action": "update transcript version; re-validate c. position",
+      "note": "current version is NM_007294.4",
+      "problem": true
+    },
+    {
+      "input": "NM_000059.3",
+      "gene": "BRCA2",
+      "variant": "c.5946delT",
+      "status": "OLD_VERSION",
+      "mane_select": "NM_000059.4",
+      "mane_select_ensembl": "ENST00000380152.8",
+      "plus_clinical": [],
+      "gene_of_transcript": "BRCA2",
+      "action": "update transcript version; re-validate c. position",
+      "note": "current version is NM_000059.4",
+      "problem": true
+    },
+    {
+      "input": "NM_000546.6",
+      "gene": "TP53",
+      "variant": "c.743G>A",
+      "status": "MANE_SELECT",
+      "mane_select": "NM_000546.6",
+      "mane_select_ensembl": "ENST00000269305.9",
+      "plus_clinical": [],
+      "gene_of_transcript": "TP53",
+      "action": "none",
+      "note": "",
+      "problem": false
+    },
+    {
+      "input": "NM_021007.2",
+      "gene": "SCN2A",
+      "variant": "c.4766A>G",
+      "status": "NON_MANE",
+      "mane_select": "NM_001040142.2",
+      "mane_select_ensembl": "ENST00000375437.7",
+      "plus_clinical": [
+        "NM_001371246.1"
+      ],
+      "gene_of_transcript": null,
+      "action": "re-report on the MANE Select (or justify)",
+      "note": "gene has MANE Plus Clinical transcript(s): NM_001371246.1 — check which isoform carries the variant",
+      "problem": true
+    },
+    {
+      "input": "NM_001040142.2",
+      "gene": "SCN2A",
+      "variant": "c.4766A>G",
+      "status": "MANE_SELECT",
+      "mane_select": "NM_001040142.2",
+      "mane_select_ensembl": "ENST00000375437.7",
+      "plus_clinical": [
+        "NM_001371246.1"
+      ],
+      "gene_of_transcript": "SCN2A",
+      "action": "none",
+      "note": "gene has MANE Plus Clinical transcript(s): NM_001371246.1 — check which isoform carries the variant",
+      "problem": false
+    },
+    {
+      "input": "NM_000492.4",
+      "gene": "CFTR",
+      "variant": "c.1521_1523delCTT",
+      "status": "MANE_SELECT",
+      "mane_select": "NM_000492.4",
+      "mane_select_ensembl": "ENST00000003084.11",
+      "plus_clinical": [],
+      "gene_of_transcript": "CFTR",
+      "action": "none",
+      "note": "",
+      "problem": false
+    },
+    {
+      "input": "NM_000243.2",
+      "gene": "MEFV",
+      "variant": "c.2080A>G",
+      "status": "OLD_VERSION",
+      "mane_select": "NM_000243.3",
+      "mane_select_ensembl": "ENST00000219596.6",
+      "plus_clinical": [],
+      "gene_of_transcript": "MEFV",
+      "action": "update transcript version; re-validate c. position",
+      "note": "current version is NM_000243.3",
+      "problem": true
+    },
+    {
+      "input": "NM_000059.4",
+      "gene": "BRCA1",
+      "variant": "c.100A>G",
+      "status": "GENE_MISMATCH",
+      "mane_select": "NM_007294.4",
+      "mane_select_ensembl": "ENST00000357654.9",
+      "plus_clinical": [],
+      "gene_of_transcript": "BRCA2",
+      "action": "fix gene or transcript",
+      "note": "NM_000059.4 is the MANE Select transcript of BRCA2, not BRCA1",
+      "problem": true
+    },
+    {
+      "input": "NM_001267550.2",
+      "gene": "TTN",
+      "variant": "c.100A>G",
+      "status": "MANE_SELECT",
+      "mane_select": "NM_001267550.2",
+      "mane_select_ensembl": "ENST00000589042.5",
+      "plus_clinical": [],
+      "gene_of_transcript": "TTN",
+      "action": "none",
+      "note": "",
+      "problem": false
+    },
+    {
+      "input": "NM_133378.4",
+      "gene": "TTN",
+      "variant": "c.100A>G",
+      "status": "NON_MANE",
+      "mane_select": "NM_001267550.2",
+      "mane_select_ensembl": "ENST00000589042.5",
+      "plus_clinical": [],
+      "gene_of_transcript": null,
+      "action": "re-report on the MANE Select (or justify)",
+      "note": "",
+      "problem": true
+    },
+    {
+      "input": "ENST00000355349.4",
+      "gene": "MYH7",
+      "variant": "c.100A>G",
+      "status": "MANE_SELECT",
+      "mane_select": "NM_000257.4",
+      "mane_select_ensembl": "ENST00000355349.4",
+      "plus_clinical": [],
+      "gene_of_transcript": "MYH7",
+      "action": "none",
+      "note": "",
+      "problem": false
+    },
+    {
+      "input": "NM_000000.1",
+      "gene": "NOTAGENE",
+      "variant": "c.1A>G",
+      "status": "UNKNOWN_GENE",
+      "mane_select": null,
+      "mane_select_ensembl": null,
+      "plus_clinical": [],
+      "gene_of_transcript": null,
+      "action": "check the gene symbol",
+      "note": "",
+      "problem": true
+    },
+    {
+      "input": "NM_001302622.2",
+      "gene": "ACHE",
+      "variant": "c.100A>G",
+      "status": "MANE_SELECT_CHANGED",
+      "mane_select": "NM_000665.5",
+      "mane_select_ensembl": "ENST00000241069.11",
+      "plus_clinical": [],
+      "gene_of_transcript": "ACHE",
+      "action": "move to the current MANE Select; re-map the variant",
+      "note": "MANE Select changed in MANE v1.5: now NM_000665.5 (ENST00000241069.11), previously NM_001302622.2; CDS affected: No",
+      "problem": true
+    },
+    {
+      "input": "",
+      "gene": "FOO",
+      "variant": "c.1A>G",
+      "status": "UNPARSEABLE",
+      "mane_select": null,
+      "mane_select_ensembl": null,
+      "plus_clinical": [],
+      "gene_of_transcript": null,
+      "action": "fix the accession",
+      "note": "",
+      "problem": true
+    }
+  ],
+  "status_help": {
+    "MANE_SELECT": "exactly the current MANE Select transcript — fine for clinical reporting",
+    "MANE_PLUS_CLINICAL": "a MANE Plus Clinical transcript — acceptable when this isoform is the clinically relevant one; say why",
+    "OLD_VERSION": "right transcript, outdated version — c. coordinates may differ; update the version and re-check the HGVS",
+    "OLD_VERSION_PLUS_CLINICAL": "a MANE Plus Clinical transcript at an outdated version — update the version",
+    "NEWER_VERSION": "a version newer than the MANE snapshot — update the MANE snapshot before deciding",
+    "MANE_SELECT_CHANGED": "this used to be MANE Select; the current MANE Select is a different accession — check coordinates carefully",
+    "NON_MANE": "not a MANE transcript for this gene — use the MANE Select unless there is a documented reason",
+    "GENE_MISMATCH": "the transcript belongs to a different gene than stated — likely a copy-paste error",
+    "GENE_NOT_IN_MANE": "protein-coding gene without a MANE transcript yet — no MANE standard to compare against",
+    "UNKNOWN_TRANSCRIPT": "accession not in the MANE snapshot and no gene given — cannot tell which gene it belongs to (add a gene column)",
+    "UNKNOWN_GENE": "gene symbol not found in MANE — check the symbol (HGNC) or spelling",
+    "UNPARSEABLE": "could not parse the transcript accession"
+  }
+}

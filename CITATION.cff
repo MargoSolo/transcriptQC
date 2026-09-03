@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "transcriptQC: MANE Select / Plus Clinical transcript check for clinical reporting"
+version: 0.1.0
+date-released: "2026-09-03"
+license: MIT
+repository-code: "https://github.com/MargoSolo/transcriptQC"
+authors:
+  - family-names: Solosenko
+    given-names: Margarita
+    email: msoloshenk@gmail.com
+keywords: [MANE, RefSeq, transcript, clinical reporting, HGVS, QC]

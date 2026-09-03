@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "transcriptqc"
+version = "0.1.0"
+description = "Is this transcript right for clinical reporting? MANE Select / MANE Plus Clinical check for RefSeq and Ensembl transcripts, offline, from a versioned MANE snapshot."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Margarita Solosenko"}]
+dependencies = ["typer>=0.12"]
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov"]
+[project.scripts]
+manecheck = "transcriptqc.cli:app"
+transcriptqc = "transcriptqc.cli:app"
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.setuptools.package-data]
+transcriptqc = ["data/*.gz"]
