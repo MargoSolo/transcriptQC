@@ -12,7 +12,8 @@ date-released: "2026-09-03"
 license: MIT
 repository-code: "https://github.com/MargoSolo/transcriptQC"
 authors:
-  - family-names: Solosenko
+  - family-names: Soloshenko
     given-names: Margarita
+    orcid: https://orcid.org/0000-0002-6150-0880
     email: msoloshenk@gmail.com
 keywords: [MANE, RefSeq, transcript, clinical reporting, HGVS, QC]

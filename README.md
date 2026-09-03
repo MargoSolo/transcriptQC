@@ -118,8 +118,8 @@ Repository `transcriptQC`, command `manecheck` (also `transcriptqc`): MANE is th
 
 ## Cite
 
-Solosenko M. *transcriptQC: MANE Select / MANE Plus Clinical transcript check for clinical reporting.* 2026. doi:10.5281/zenodo.22285580 (concept DOI, all versions; v0.1.1 = 10.5281/zenodo.22285581). Machine-readable in `CITATION.cff`.
+Soloshenko M. *transcriptQC: MANE Select / MANE Plus Clinical transcript check for clinical reporting.* 2026. doi:10.5281/zenodo.22285580 (concept DOI, all versions; v0.1.1 = 10.5281/zenodo.22285581). Machine-readable in `CITATION.cff`.
 
 ## License
 
-MIT — Margarita Solosenko, 2026. MANE data © NCBI/EMBL-EBI, public domain / open licence per their terms.
+MIT — Margarita Soloshenko, 2026. MANE data © NCBI/EMBL-EBI, public domain / open licence per their terms.
