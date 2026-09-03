@@ -118,7 +118,7 @@ Repository `transcriptQC`, command `manecheck` (also `transcriptqc`): MANE is th
 
 ## Cite
 
-Soloshenko M. *transcriptQC: MANE Select / MANE Plus Clinical transcript check for clinical reporting.* 2026. doi:10.5281/zenodo.22285580 (concept DOI, all versions; v0.1.1 = 10.5281/zenodo.22285581). Machine-readable in `CITATION.cff`.
+Soloshenko M. *transcriptQC (manecheck): MANE Select / MANE Plus Clinical transcript check against the MANE reference set.* 2026. doi:10.5281/zenodo.22285580 (concept DOI, all versions; v0.1.1 = 10.5281/zenodo.22285581). Machine-readable in `CITATION.cff`.
 
 ## License
 
