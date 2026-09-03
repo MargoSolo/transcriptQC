@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
-title: "transcriptQC: MANE Select / Plus Clinical transcript check for clinical reporting"
+title: "transcriptQC (manecheck): MANE Select / MANE Plus Clinical transcript check against the MANE reference set"
 version: 0.1.2
 doi: 10.5281/zenodo.22285581
 identifiers:
